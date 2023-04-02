@@ -1,3 +1,4 @@
+//Transforma as despesas em object
 class Despesa {
   constructor(ano, mes, dia, tipo, descricao, valor){
     this.ano = ano
@@ -9,7 +10,7 @@ class Despesa {
   }
 }
 
-
+//Evento onClick recebe os dados e envia para a classe
 function cadastrarDespesa() {
 
   let ano = document.querySelector('#ano')
@@ -20,5 +21,10 @@ function cadastrarDespesa() {
   let valor = document.querySelector('#valor')
 
   const despesa = new Despesa(ano.value, mes.value, dia.value, tipo.value, descricao.value, valor.value) 
-  console.log(despesa)
+  Gravar(despesa) //Callback
+}
+
+//Grava a classe (objeto) no localStorage da Aplicação
+function Gravar(obj){
+  localStorage.setItem('despesa', JSON.stringify(obj))
 }
