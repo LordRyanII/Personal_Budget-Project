@@ -5,10 +5,41 @@ class Despesa {
     this.mes = mes
     this.dia = dia 
     this.tipo = tipo
-    this.descricao = descricao
     this.valor = valor
+    this.descricao = descricao
+  }
+  validarDados(){
+    for(let indice in this){
+      console.log(indice)
+    }
   }
 }
+
+class Banco {
+  constructor() {
+		let id = localStorage.getItem('id')
+
+		if(id === null) {
+			localStorage.setItem('id', 0)
+		}
+	}
+
+	getProximoId() {
+		let proximoId = localStorage.getItem('id')
+		return parseInt(proximoId) + 1
+	}
+
+	gravar(itens) { //recebe os dados da variavél 'despesa'
+		let id = this.getProximoId()
+
+		localStorage.setItem(id, JSON.stringify(itens))
+
+		localStorage.setItem('id', id)
+
+	}
+}
+
+let bd = new Banco()
 
 //Evento onClick recebe os dados e envia para a classe
 function cadastrarDespesa() {
@@ -17,14 +48,22 @@ function cadastrarDespesa() {
   let mes = document.querySelector('#mes')
   let dia = document.querySelector('#dia')
   let tipo = document.querySelector('#tipo')
-  let descricao = document.querySelector('#descricao')
   let valor = document.querySelector('#valor')
+  let descricao = document.querySelector('#descricao')
 
-  const despesa = new Despesa(ano.value, mes.value, dia.value, tipo.value, descricao.value, valor.value) 
-  Gravar(despesa) //Callback
-}
+  const despesa = new Despesa(
+    ano.value, 
+    mes.value, 
+    dia.value, 
+    tipo.value, 
+    descricao.value, 
+    valor.value) 
 
-//Grava a classe (objeto) no localStorage da Aplicação
-function Gravar(obj){
-  localStorage.setItem('despesa', JSON.stringify(obj))
+//Validar dados
+  if(despesa.validarDados() === true){
+    bd.gravar(despesa)
+  } else{
+    console.log('Error')
+  }
+  
 }
