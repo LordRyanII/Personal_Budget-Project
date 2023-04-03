@@ -10,11 +10,16 @@ class Despesa {
   }
   validarDados(){
     for(let indice in this){
-      console.log(indice)
+      if(this[indice] === undefined || this[indice] === '' || this[indice] === null){
+        return false
+      } else {
+        return true
+      }
     }
   }
 }
 
+//Banco de dados que armazena o object no localStorage
 class Banco {
   constructor() {
 		let id = localStorage.getItem('id')
@@ -61,8 +66,9 @@ function cadastrarDespesa() {
 
 //Validar dados
   if(despesa.validarDados() === true){
-    bd.gravar(despesa)
-  } else{
+    //bd.gravar(despesa)
+    
+  } else {
     console.log('Error')
   }
   
