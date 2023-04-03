@@ -72,10 +72,10 @@ function cadastrarDespesa() {
   if(despesa.validarDados() === true){
 
     bd.gravar(despesa)
-    alert_div.className =  'modal-header text-sucess'
+    alert_div.className =  'modal-header text-success'
     alert_titulo.innerHTML = 'Sucesso na gravação' 
     alert_resultado.innerHTML = 'Registros inseridos com Sucesso. Despesa foi cadastrada com sucesso.'
-    alert_bottom.className = 'btn btn-sucess'
+    alert_bottom.className = 'btn btn-success'
     alert_bottom.innerHTML = 'Ok!' 
     //Jquery
     $('#alertaRegistraDespesa').modal('show')
