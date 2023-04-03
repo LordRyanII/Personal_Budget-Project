@@ -55,7 +55,11 @@ function cadastrarDespesa() {
   let tipo = document.querySelector('#tipo')
   let valor = document.querySelector('#valor')
   let descricao = document.querySelector('#descricao')
-
+  let alert_bottom = document.querySelector('#Alert_btn')
+  let alert_div = document.querySelector('#div_alertaTitulo')
+  let alert_titulo = document.querySelector('#alerta_titulo')
+  let alert_resultado = document.querySelector('#alerta_Conteudo')
+  
   let despesa = new Despesa(
     ano.value, 
     mes.value, 
@@ -66,12 +70,25 @@ function cadastrarDespesa() {
 
 //Validar dados
   if(despesa.validarDados() === true){
+
     bd.gravar(despesa)
-    $('#sucessoGravacao').modal('show')
+    alert_div.className =  'modal-header text-sucess'
+    alert_titulo.innerHTML = 'Sucesso na gravação' 
+    alert_resultado.innerHTML = 'Registros inseridos com Sucesso. Despesa foi cadastrada com sucesso.'
+    alert_bottom.className = 'btn btn-sucess'
+    alert_bottom.innerHTML = 'Ok!' 
+    //Jquery
+    $('#alertaRegistraDespesa').modal('show')
     
   } else {
+
+    alert_div.className =  'modal-header text-danger'
+    alert_titulo.innerHTML = 'Erro na gravação' 
+    alert_resultado.innerHTML = 'Erro na gravação. Verifique se todos os campos foram preenchidos corretamente.'
+    alert_bottom.innerHTML = 'Voltar e corrigir'
+    alert_bottom.className = 'btn btn-danger'
     //Jquery
-    $('#erroGravacao').modal('show')
+    $('#alertaRegistraDespesa').modal('show')
   }
   
 }

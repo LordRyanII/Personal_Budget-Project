@@ -98,46 +98,25 @@
           </div>
         </div>
       </div> 
-    
+
 <!--Componente que Mostrará a mensagem de sucess (modal)-->
-<!-- Modal Error-->
-<div class="modal fade" id="erroGravacao" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- Modal-->
+<div class="modal fade" id="alertaRegistraDespesa" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header text-danger">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Erro na gravação </h1>
+      <div id="div_alertaTitulo">
+        <h1 class="modal-title fs-5 text-success" id="alerta_titulo"></h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
-        Existem campos obrigatórios que não foram preenchidos
+      <div class="modal-body" id="alerta_Conteudo">
+        
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Voltar e Corrigir </button>
+        <button type="button" class="" data-bs-dismiss="modal" id="Alert_btn"></button>
       </div>
     </div>
   </div>
 </div>  
-
-<!-- Modal Sucess-->
-<div class="modal fade" id="sucessoGravacao" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header text-sucess">
-        <h1 class="modal-title fs-5 text-success" id="exampleModalLabel">Sucesso na gravação </h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        Registros inseridos com Sucesso. Despesa foi cadastrada com sucesso.
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Ok! </button>
-      </div>
-    </div>
-  </div>
-</div>  
-
-
-
 
 <!--Scripts-->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
