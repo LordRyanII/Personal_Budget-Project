@@ -31,7 +31,7 @@ class Banco {
 
 	getProximoId() {
 		let proximoId = localStorage.getItem('id')
-		return parseInt(proximoId) + 1
+		return Number(proximoId) + 1
 	}
 
 	gravar(itens) { //recebe os dados da variavél 'despesa'
@@ -56,7 +56,7 @@ function cadastrarDespesa() {
   let valor = document.querySelector('#valor')
   let descricao = document.querySelector('#descricao')
 
-  const despesa = new Despesa(
+  let despesa = new Despesa(
     ano.value, 
     mes.value, 
     dia.value, 
@@ -66,10 +66,12 @@ function cadastrarDespesa() {
 
 //Validar dados
   if(despesa.validarDados() === true){
-    //bd.gravar(despesa)
+    bd.gravar(despesa)
+    $('#sucessoGravacao').modal('show')
     
   } else {
-    console.log('Error')
+    //Jquery
+    $('#erroGravacao').modal('show')
   }
   
 }

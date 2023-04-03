@@ -99,8 +99,42 @@
         </div>
       </div> 
     
+<!--Componente que Mostrará a mensagem de sucess (modal)-->
+<!-- Modal Error-->
+<div class="modal fade" id="erroGravacao" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header text-danger">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Erro na gravação </h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Existem campos obrigatórios que não foram preenchidos
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Voltar e Corrigir </button>
+      </div>
+    </div>
+  </div>
+</div>  
 
-
+<!-- Modal Sucess-->
+<div class="modal fade" id="sucessoGravacao" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header text-sucess">
+        <h1 class="modal-title fs-5 text-success" id="exampleModalLabel">Sucesso na gravação </h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Registros inseridos com Sucesso. Despesa foi cadastrada com sucesso.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal">Ok! </button>
+      </div>
+    </div>
+  </div>
+</div>  
 
 
 
@@ -108,6 +142,8 @@
 <!--Scripts-->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js" integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i" crossorigin="anonymous"></script>
+<!--Biblioteca Jquery-->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 <script src="app.js"></script>
 </body>
