@@ -85,8 +85,8 @@ function cadastrarDespesa() {
     alert_div.className =  'modal-header text-danger'
     alert_titulo.innerHTML = 'Erro na gravação' 
     alert_resultado.innerHTML = 'Erro na gravação. Verifique se todos os campos foram preenchidos corretamente.'
-    alert_bottom.innerHTML = 'Voltar e corrigir'
     alert_bottom.className = 'btn btn-danger'
+    alert_bottom.innerHTML = 'Voltar e corrigir'
     //Jquery
     $('#alertaRegistraDespesa').modal('show')
   }
