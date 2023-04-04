@@ -61,6 +61,58 @@ class Banco {
     }
     return despesas
   }
+
+  pesquisarDespesas(ListaDespesas){
+    let despesasFiltradas = Array()
+
+    despesasFiltradas = this.recuperarTodosRegistros()
+
+
+    //Aplicando Filtros
+  if(ListaDespesas.ano != ''){
+    //Condição para o ano
+    despesasFiltradas = despesasFiltradas.filter(indice => {
+      return indice.ano == ListaDespesas.ano
+    })
+
+  }if(ListaDespesas.mes != ''){ //Errei aqui, else if retorna valores false
+    //Condição para o mes
+    despesasFiltradas = despesasFiltradas.filter(indice => {
+      return indice.mes == ListaDespesas.mes
+    })
+
+  }if(ListaDespesas.dia != ''){
+    //Condição para o dia
+    despesasFiltradas = despesasFiltradas.filter(indice => {
+      return indice.dia == ListaDespesas.dia
+    })
+
+  }if(ListaDespesas.tipo != ''){ //Errei aqui, else if retorna valores false
+    //Condição para o tipo
+    despesasFiltradas = despesasFiltradas.filter(indice => {
+      return indice.tipo == ListaDespesas.tipo
+    })
+
+  }if(ListaDespesas.valor != ''){ 
+    //Condição para o valor
+    despesasFiltradas = despesasFiltradas.filter(indice => {
+      return indice.valor == ListaDespesas.valor
+    })
+
+  }if(ListaDespesas.descricao != ''){ 
+    //Condição para o descriçao
+    despesasFiltradas = despesasFiltradas.filter(indice => {
+      return indice.descricao == ListaDespesas.descricao
+    })
+
+  }
+
+
+return despesasFiltradas
+
+}
+    
+
 }
 
 let bd = new Banco()
@@ -132,7 +184,7 @@ function carregaListaDespesa(){
 
   //Percorrendo o array
   despesas.forEach((indice) => {
-    console.log(indice)
+    
 
     //Cria a linha (tr)
     let linha = tabela.insertRow()
@@ -146,3 +198,48 @@ function carregaListaDespesa(){
 
   })
 }
+
+
+function pesquisarDespesa(){
+
+  let ano = document.querySelector('#ano').value
+  let mes = document.querySelector('#mes').value
+  let dia = document.querySelector('#dia').value
+  let tipo = document.querySelector('#tipo').value
+  let valor = document.querySelector('#valor').value
+  let descricao = document.querySelector('#descricao').value
+  
+  let ListaDespesas = new Despesa(
+    ano,
+    mes,
+    dia,
+    tipo,
+    valor,
+    descricao)
+    
+    let despesas = bd.pesquisarDespesas(ListaDespesas)
+    
+    //Pega o tbody com o DOM e limpa a tabela
+    let tabela = document.querySelector('#listaDespesa')
+    tabela.innerHTML = ''
+    
+    //Adiciona o valor retornado pesquisarDespesas() nas (tr)
+    despesas.forEach((indice) => {
+    
+
+    //Cria a linha (tr)
+    let linha = tabela.insertRow()
+
+    //Criar as colunas (td)
+
+    linha.insertCell(0).innerHTML = `${indice.dia}/${indice.mes}/${indice.ano}`
+    linha.insertCell(1).innerHTML = `${indice.tipo}`
+    linha.insertCell(2).innerHTML = `${indice.descricao}`
+    linha.insertCell(3).innerHTML = 'R$' + `${indice.valor}`
+
+  })
+
+}
+
+
+
