@@ -98,6 +98,15 @@ function cadastrarDespesa() {
     alert_bottom.innerHTML = 'Ok!' 
     //Jquery
     $('#alertaRegistraDespesa').modal('show')
+
+    //limpa os espaços
+    ano.value = ''
+    mes.value = ''
+    dia.value = ''
+    tipo.value = ''
+    descricao.value  = ''
+    valor.value = ''
+    
     
   } else {
 
@@ -106,6 +115,7 @@ function cadastrarDespesa() {
     alert_resultado.innerHTML = 'Erro na gravação. Verifique se todos os campos foram preenchidos corretamente.'
     alert_bottom.className = 'btn btn-danger'
     alert_bottom.innerHTML = 'Voltar e corrigir'
+    
     //Jquery
     $('#alertaRegistraDespesa').modal('show')
   }
@@ -115,8 +125,24 @@ function cadastrarDespesa() {
 //Function Responsavél por exibir o resultado (PESQUISA )
 
 function carregaListaDespesa(){
+
+  let tabela = document.querySelector('#listaDespesa')
   let despesas = Array()
   despesas = bd.recuperarTodosRegistros()
 
-  console.log(despesas)
+  //Percorrendo o array
+  despesas.forEach((indice) => {
+    console.log(indice)
+
+    //Cria a linha (tr)
+    let linha = tabela.insertRow()
+
+    //Criar as colunas (td)
+
+    linha.insertCell(0).innerHTML = `${indice.dia}/${indice.mes}/${indice.ano}`
+    linha.insertCell(1).innerHTML = `${indice.tipo}`
+    linha.insertCell(2).innerHTML = `${indice.descricao}`
+    linha.insertCell(3).innerHTML = 'R$' + `${indice.valor}`
+
+  })
 }
