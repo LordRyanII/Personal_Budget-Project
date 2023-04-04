@@ -42,6 +42,25 @@ class Banco {
 		localStorage.setItem('id', id)
 
 	}
+  recuperarTodosRegistros(){
+//Array de despesa
+  let despesas = Array()
+  let pegaId = localStorage.getItem('id')
+
+//Recupera todas as despesas no localStorage
+    for(let i = 1; i <= pegaId; i++){
+      //Recupera a despesa
+
+      let despesa = JSON.parse(localStorage.getItem(i))
+      //Verifica se há valores removidos
+      if(despesa === null){
+        continue  
+      } else{
+        despesas.push(despesa)
+      }
+    }
+    return despesas
+  }
 }
 
 let bd = new Banco()
@@ -91,4 +110,13 @@ function cadastrarDespesa() {
     $('#alertaRegistraDespesa').modal('show')
   }
   
+}
+
+//Function Responsavél por exibir o resultado (PESQUISA )
+
+function carregaListaDespesa(){
+  let despesas = Array()
+  despesas = bd.recuperarTodosRegistros()
+
+  console.log(despesas)
 }
