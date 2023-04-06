@@ -9,7 +9,7 @@ FullStack project, first part is complete.
 - modern layout;<br>
 - JavaScript; <br>
 - Jquery; <br>
-- Node.js.
+- Node.js
 
 <strong> Follow the development, see the first part and its functions </strong> <br>
 
