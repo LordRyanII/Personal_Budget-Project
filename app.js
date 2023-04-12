@@ -201,21 +201,21 @@ function carregaListaDespesa(){
 
     //Botão de Opção de exclução:
 
-    let btn = document.createElement('button')
-    btn.className = 'btn btn-danger'
-    btn.innerHTML = '<i class="fas fa-times"></i>'
-    btn.id = `id_despesa_${indice.pegaId}`
+    let btn = document.createElement('button')//cria a tag button
+    btn.className = 'btn btn-danger' //Adiciona uma class a tag button, class do bootstrap
+    btn.innerHTML = '<i class="fas fa-times"></i>' //Adiciona um icone a classe btn
+    let idbtn = btn.id = `id_despesa_${indice.pegaId}` // Adiciona um id ao elemnto btn
+
+    //Evento que removerá as despesas
     btn.onclick = () => {
-
-      //remover as despesas
-
-      let id = this.btn.id.replace('id_despesa_', '')
+      
+      let id = idbtn.replace('id_despesa_', '')
+      window.location.reload()
       return bd.remover(id)
     }
 
-    linha.insertCell(4).append(btn)
-
-    console.log(indice)
+    linha.insertCell(4).append(btn) //Adiciona na coluna numero 4, o elemento filho que é o btn
+    //console.log(indice)
 
   })
 }
