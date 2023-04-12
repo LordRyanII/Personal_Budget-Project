@@ -104,11 +104,10 @@ class Banco {
     despesasFiltradas = despesasFiltradas.filter(indice => {
       return indice.descricao == ListaDespesas.descricao
     })
+    return despesasFiltradas
 
   }
 
-
-return despesasFiltradas
 
 }
     
@@ -195,6 +194,17 @@ function carregaListaDespesa(){
     linha.insertCell(1).innerHTML = `${indice.tipo}`
     linha.insertCell(2).innerHTML = `${indice.descricao}`
     linha.insertCell(3).innerHTML = 'R$' + `${indice.valor}`
+
+    //Botão de Opção de exclução:
+
+    let btn = document.createElement('button')
+    btn.className = 'btn btn-danger'
+    btn.innerHTML = '<i class="fas fa-times"></i>'
+    btn.onclick = () => {
+      return alert('Remover a despesa')
+    }
+    linha.insertCell(4).append(btn)
+
 
   })
 }
