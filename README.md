@@ -1,6 +1,6 @@
  # Personal_Budget #
 
-FullStack project, first part is complete.
+FullStack project, secound part is complete.
 
 <strong><u> Added: </u></strong>
 
