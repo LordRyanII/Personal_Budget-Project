@@ -49,17 +49,19 @@ class Banco {
 
 //Recupera todas as despesas no localStorage
     for(let i = 1; i <= pegaId; i++){
-      //Recupera a despesa
 
+      //Recupera a despesa
       let despesa = JSON.parse(localStorage.getItem(i))
+
       //Verifica se há valores removidos
       if(despesa === null){
         continue  
-      } else{
+      } else {
+        despesa.pegaId = i
         despesas.push(despesa)
       }
     }
-    return despesas
+    return despesas 
   }
 
   pesquisarDespesas(ListaDespesas){
@@ -108,8 +110,10 @@ class Banco {
 
   }
 
-
 }
+  remover(id){
+    localStorage.removeItem(id)
+  }
     
 
 }
@@ -200,11 +204,18 @@ function carregaListaDespesa(){
     let btn = document.createElement('button')
     btn.className = 'btn btn-danger'
     btn.innerHTML = '<i class="fas fa-times"></i>'
+    btn.id = `id_despesa_${indice.pegaId}`
     btn.onclick = () => {
-      return alert('Remover a despesa')
+
+      //remover as despesas
+
+      let id = this.btn.id.replace('id_despesa_', '')
+      return bd.remover(id)
     }
+
     linha.insertCell(4).append(btn)
 
+    console.log(indice)
 
   })
 }
