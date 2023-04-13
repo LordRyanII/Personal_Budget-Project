@@ -4,10 +4,10 @@ FullStack project, second part is complete.
 
 <strong><u> Added: </u></strong>
 
-- Responsive design with Bootstrap5; <br>
 - Css3 advanced; <br>
 - modern layout; <br>
-- JavaScript; <br>
+- JavaScript and ecmaScript; <br>
+- Responsive design with Bootstrap5; <br>
 - remove items in localStorage <br>
 - Jquery; <br>
 - Node.js
