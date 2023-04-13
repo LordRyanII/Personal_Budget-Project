@@ -6,8 +6,9 @@ FullStack project, second part is complete.
 
 - Responsive design with Bootstrap5; <br>
 - Css3 advanced; <br>
-- modern layout;<br>
+- modern layout; <br>
 - JavaScript; <br>
+- remove items in localStorage <br>
 - Jquery; <br>
 - Node.js
 
