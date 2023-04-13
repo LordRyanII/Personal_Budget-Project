@@ -6,9 +6,9 @@ FullStack project, second part is complete.
 
 - Css3 advanced; <br>
 - modern layout; <br>
-- JavaScript and ecmaScript; <br>
+- JavaScript and EcmaScript 6; <br>
+- CRUD using localStorage to store the information; <br>
 - Responsive design with Bootstrap5; <br>
-- remove items in localStorage <br>
 - Jquery; <br>
 - Node.js
 
