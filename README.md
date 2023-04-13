@@ -8,8 +8,8 @@ FullStack project, second part is complete.
 - Jquery; <br>
 - Css3 advanced; <br>
 - modern layout; <br>
-- JavaScript and EcmaScript 6; <br>
-- Responsive design with Bootstrap5; <br>
+- JavaScript with EcmaScript 6; <br>
+- Responsive design with Bootstrap 5; <br>
 - CRUD using localStorage to store the information; <br>
 
 <strong> Follow the development, see the second part and its functions </strong> <br>
